@@ -1,0 +1,9 @@
+data/
+data_karel/
+downloads/
+ontonotes-release-5.0/
+reference-coreference-scorers/
+*.tar.gz
+*.pickle
+*.tgz
+/access-token.txt
