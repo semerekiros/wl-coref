@@ -366,7 +366,7 @@ class CorefModel:  # pylint: disable=too-many-instance-attributes
         self.a_scorer = AnaphoricityScorer(pair_emb, self.config).to(self.config.device)
         self.we = WordEncoder(bert_emb, self.config).to(self.config.device)
         self.rough_scorer = RoughScorer(bert_emb, self.config).to(self.config.device)
-        self.sp = SpanPredictor(bert_emb, self.config.sp_embedding_size).to(self.config.device)
+        self.sp = SpanPredictor(bert_emb, self.config.sp_embedding_size, self.config.cluster_averaging).to(self.config.device)
 
         self.trainable: Dict[str, torch.nn.Module] = {
             "bert": self.bert, "we": self.we,

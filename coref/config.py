@@ -42,3 +42,5 @@ class Config:  # pylint: disable=too-many-instance-attributes, too-few-public-me
 
     tokenizer_kwargs: Dict[str, dict]
     conll_log_dir: str
+
+    cluster_averaging: str

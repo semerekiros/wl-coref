@@ -4,6 +4,9 @@
 
 [DEFAULT]
 
+# cluster averaging method
+cluster_averaging = 'none'
+
 # The directory that contains extracted files of everything you've downloaded.
 data_dir = "data"
 
@@ -100,6 +103,18 @@ conll_log_dir = "data/conll_logs"
 
 [roberta]
 bert_model = "roberta-large"
+
+[roberta_mean]
+bert_model = "roberta-large"
+cluster_averaging = 'mean'
+
+[roberta_max]
+bert_model = "roberta-large"
+cluster_averaging = 'max'
+
+[roberta_develop]
+bert_model = "roberta-large"
+device = 'cpu'
 
 [roberta_no_bce]
 bert_model = "roberta-large"
