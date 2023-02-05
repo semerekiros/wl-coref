@@ -110,7 +110,7 @@ cluster_averaging = 'mean'
 
 [roberta_max]
 bert_model = "roberta-large"
-cluster_averaging = 'max'
+cluster_averaging = 'maxpool'
 
 [roberta_develop]
 bert_model = "roberta-large"

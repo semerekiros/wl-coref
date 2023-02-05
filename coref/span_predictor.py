@@ -129,7 +129,7 @@ class SpanPredictor(torch.nn.Module):
         for cluster in clusters:
             if self.cluster_averaging == 'mean':
                 cluster_averages.append(torch.mean(words[cluster], 0))
-            elif self.cluster_averaging == 'max':
+            elif self.cluster_averaging == 'maxpool':
                 cluster_averages.append(torch.max(words[cluster], 0))
 
         cluster_averages = torch.stack(cluster_averages)
