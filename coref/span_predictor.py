@@ -132,13 +132,14 @@ class SpanPredictor(torch.nn.Module):
             elif self.cluster_averaging == 'maxpool':
                 cluster_averages.append(torch.max(words[cluster], 0).values)
 
-        cluster_averages = torch.stack(cluster_averages)
+        if self.cluster_averaging != 'none':
+            cluster_averages = torch.stack(cluster_averages)
 
 
         row_to_cluster = []
         for index, cluster in enumerate(clusters):
             row_to_cluster.extend([index] * len(cluster))
-        row_to_cluster = torch.tensor(row_to_cluster, device=cluster_averages.device).long()
+        row_to_cluster = torch.tensor(row_to_cluster, device=words.device).long()
         
 
         # To save memory, only pass candidates from one sentence for each head
