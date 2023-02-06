@@ -138,7 +138,7 @@ class SpanPredictor(torch.nn.Module):
         row_to_cluster = []
         for index, cluster in enumerate(clusters):
             row_to_cluster.extend([index] * len(cluster))
-        row_to_cluster = torch.LongTensor(row_to_cluster, device=cluster_averages.device,)
+        row_to_cluster = torch.tensor(row_to_cluster, device=cluster_averages.device).long()
         
 
         # To save memory, only pass candidates from one sentence for each head
